@@ -1,6 +1,6 @@
-- 👋 Hi, I’m Gyan Prakash Chaurasiya
-- 👀 I’m interested in playing Football , edit photos .
-- 🌱 I’m currently learning BCA
+- 👋 Hi, I’m Gyan Prakash Chaurasiya.
+- 👀 I’m interested in playing Football , edit photos ,videos .
+- 🌱 I’m currently learning BCA.
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 - 😄 Pronouns: ...
