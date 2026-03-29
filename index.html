@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Department Sports Scoreboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Department of Computer Science Sports Scoreboard</h1>
+    <p>Register teams, score live, and export reports.</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>1) Team Registration</h2>
+      <form id="team-form">
+        <label>Team Name<input id="team-name" required /></label>
+        <label>Team ID<input id="team-id" required /></label>
+        <label>Course<input id="team-course" required placeholder="BCA / MCA / BSc CS"/></label>
+        <label>Team Photo<input id="team-photo" type="file" accept="image/*" /></label>
+        <button type="submit">Add Team</button>
+      </form>
+      <ul id="team-list" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>2) Match Setup</h2>
+      <form id="match-form">
+        <label>Sport
+          <select id="sport" required>
+            <option value="">Choose a sport</option>
+            <option>Football</option>
+            <option>Cricket</option>
+            <option>Volleyball</option>
+            <option>Basketball</option>
+            <option>Badminton</option>
+            <option>Table Tennis</option>
+          </select>
+        </label>
+        <label>Team A
+          <select id="team-a" required></select>
+        </label>
+        <label>Team B
+          <select id="team-b" required></select>
+        </label>
+        <button type="submit">Start Match</button>
+      </form>
+      <p id="match-status" class="status">No active match.</p>
+    </section>
+
+    <section class="card full">
+      <h2>3) Live Scoreboard</h2>
+      <div id="scoreboard" class="scoreboard hidden">
+        <div class="team-box">
+          <img id="score-photo-a" alt="Team A" />
+          <h3 id="score-team-a">Team A</h3>
+          <p class="meta" id="score-course-a"></p>
+          <div class="controls">
+            <button data-action="dec-a">-</button>
+            <span id="score-a" class="score">0</span>
+            <button data-action="inc-a">+</button>
+          </div>
+        </div>
+
+        <div class="vs">
+          <p id="sport-label">SPORT</p>
+          <p>VS</p>
+          <button id="end-match" class="end">End Match</button>
+        </div>
+
+        <div class="team-box">
+          <img id="score-photo-b" alt="Team B" />
+          <h3 id="score-team-b">Team B</h3>
+          <p class="meta" id="score-course-b"></p>
+          <div class="controls">
+            <button data-action="dec-b">-</button>
+            <span id="score-b" class="score">0</span>
+            <button data-action="inc-b">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card full">
+      <h2>4) Result Board</h2>
+      <div id="result" class="result empty">Finish a match to show winner and runner-up.</div>
+    </section>
+
+    <section class="card full">
+      <h2>5) Department Report</h2>
+      <div class="report-controls">
+        <button id="download-json">Download JSON Report</button>
+        <button id="download-csv">Download CSV Report</button>
+        <button id="print-report">Print Report</button>
+        <button id="clear-data" class="danger">Clear All Data</button>
+      </div>
+      <table id="report-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Sport</th>
+            <th>Team A</th>
+            <th>Score</th>
+            <th>Team B</th>
+            <th>Winner</th>
+            <th>Runner-up</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built for Department of Computer Science • Live Sports Management</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
